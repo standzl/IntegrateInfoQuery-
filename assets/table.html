@@ -1,0 +1,83 @@
+<html>
+<head>
+<script>
+		function show(jsondata){
+			clearTableContent();
+			var jsonObjs=eval(jsondata);
+			var table=document.getElementById("content");
+			for(var j=0; j<jsonObjs.length;j++){
+				var tr=table.insertRow(table.rows.length);
+				tr.style.backgroundColor="#E6C97F";
+				tr.onmouseover=function(){
+					this.style.backgroundColor="#74DA49";
+				}
+				tr.onmouseout=function(){
+					this.style.backgroundColor="#E6C97F";
+				}
+				tr.align="center";
+				//添加五列
+				var td1=tr.insertCell(0);
+				var td2=tr.insertCell(1);
+				var td3=tr.insertCell(2);
+				var td4=tr.insertCell(3);
+				var td5=tr.insertCell(4);
+				var td6=tr.insertCell(5);
+				//设置列内容和属性
+				td1.innerHTML=jsonObjs[j].enterPriserName;
+				td2.innerHTML=jsonObjs[j].enterPriserRegNo;
+				td3.innerHTML=jsonObjs[j].enterPriserPerson;
+				td4.innerHTML=jsonObjs[j].enterPriserCreateDate;
+				td5.innerHTML=jsonObjs[j].enterPriserStatus;
+				td6.innerHTML="<a href='javascript:androidObj.showDetail(\""+jsonObjs[j].enterPriserDetailStr+"\",\""+jsonObjs[j].enterPriserRegNo+"\")'>详细</a>";
+			}
+		}
+
+		function clearTableContent(){
+			var table=document.getElementById("content");
+			var rowNum=table.rows.length;
+			for(var i=1; i<rowNum;i++){
+				table.deleteRow(i);
+				rowNum=table.rows.length;
+				i-=1;
+			}
+		}
+/*
+			function init(){
+			var jsonObj=[{'enterPriserName':'北京传奇有限公司',
+						  'enterPriserRegNo':'11223344556677',
+						  'enterPriserPerson':'王显民',
+						  'enterPriserCreateDate':'2013-10-16',
+						  'enterPriserStatus':'开业'},
+						  {'enterPriserName':'北京传奇有限公司',
+						  'enterPriserRegNo':'11223344556677',
+						  'enterPriserPerson':'王显民',
+						  'enterPriserCreateDate':'2013-10-16',
+						  'enterPriserStatus':'开业'},
+						  {'enterPriserName':'北京传奇有限公司',
+						  'enterPriserRegNo':'11223344556677',
+						  'enterPriserPerson':'王显民',
+						  'enterPriserCreateDate':'2013-10-16',
+						  'enterPriserStatus':'开业'},
+						  {'enterPriserName':'北京传奇有限公司',
+						  'enterPriserRegNo':'11223344556677',
+						  'enterPriserPerson':'王显民',
+						  'enterPriserCreateDate':'2013-10-16',
+						  'enterPriserStatus':'开业'}];
+			show(jsonObj);
+		}
+*/
+</script>
+</head>
+<body>
+	<table border="1" width="100%" id="content">
+		<tr>
+			<th>主体名称</th>
+			<th>注册号</th>
+			<th>法定代表人/负责人</th>
+			<th>成立日期</th>
+			<th>企业状态</th>
+			<th>操作</th>
+		</tr>
+	</table>
+</body>
+</html>

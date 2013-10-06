@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">企业查询</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="enterpriserName">主体名称:</string>
+    <string name="enterpriserNameHint">请填写企业名称</string>
+    <string name="dongfangfeiyang">东方飞扬</string>
+    <string name="enterpriserRegNo">注册号:</string>
+    <string name="enterpriserPerson">法定代表人/负责人:</string>
+    <string name="query">查询</string>
+    <string name="rest">重置</string>
+</resources>

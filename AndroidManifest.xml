@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.standzl.enterpriser.activtiy"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/fm"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="stateVisible|adjustPan">
+        <activity
+            android:name="com.standzl.enterpriser.activtiy.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <uses-library android:name="android.test.runner" />
+    </application>
+    <!-- 配置单元测试 -->
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+	<instrumentation android:name="android.test.InstrumentationTestRunner" 
+	    			 android:targetPackage="com.standzl.enterpriser.activtiy" 
+	    			 android:label="Test for my app"/>
+    <!-- 允许使用网络 -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<!-- 访问网络状态 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
